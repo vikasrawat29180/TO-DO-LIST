@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="searchbar">
+        <input type="text" id="search" name="search" [(ngModel)]="search" placeholder="Search" autocomplete="off">
+        <label for="search" (click)="startSearch()"><mat-icon>search</mat-icon></label>
+    </div>
+    <div *ngIf="todoList.length!=0; else elseBlock" class="listContainer">
+        <div class="list" *ngFor="let todo of todoList;index as i">
+            <app-todo [todo]="todo" [i]="i" (deleteTodo)="deleteTodo($event)" (toggleActive)="toggle($event)"></app-todo>
+        </div>
+    </div>
+    <ng-template #elseBlock ><h1>No work Left :)</h1></ng-template>
+    <div routerLink="AddItem" class="additem">
+        <mat-icon>add</mat-icon>
+    </div>
+</div>

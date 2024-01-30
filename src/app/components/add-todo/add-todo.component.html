@@ -1,0 +1,14 @@
+<div class="container">
+    <form (ngSubmit)="addTodo()">
+        <div>
+            <input type="text" id="title" name="title" placeholder="title" [(ngModel)]="title">
+        </div>
+        <div>
+            <textarea id="desc" name="desc" placeholder="description" [(ngModel)]="desc"></textarea>
+        </div>
+        <div class="button">
+            <button routerLink="/" type="button" >Back</button>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>

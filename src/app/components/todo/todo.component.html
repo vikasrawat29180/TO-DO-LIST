@@ -1,0 +1,5 @@
+<div [ngClass]="{'container':true, 'hide':!todo.display}" >
+    <h3 [ngClass]="{'stick':!todo.active}" routerLink="Detail/{{i+1}}">{{todo.title}}</h3>
+    <mat-checkbox (click)="toggle()"  ></mat-checkbox>
+    <mat-icon (click)="deleteIt()">delete</mat-icon>
+</div>
